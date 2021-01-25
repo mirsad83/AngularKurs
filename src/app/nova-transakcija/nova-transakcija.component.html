@@ -1,0 +1,30 @@
+<div class="container">
+
+  <div *ngIf="porukaZaKorisnika">
+    {{ porukaZaKorisnika }}
+  </div>
+
+  <form [formGroup]="transakcija" (ngSubmit)="onSubmit(transakcija)">
+
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+
+    <mat-form-field>
+      <input matInput placeholder="Unesite detalje transakcije" type="text" formControlName="detaljiTransakcije">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Unesite kategoriju" type="text" formControlName="kategorija">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Unesite iznos transakcije" type="number" formControlName="iznos">
+    </mat-form-field>
+
+    <button type="submit">Unesi transakciju</button>
+
+  </form>
+
+</div>

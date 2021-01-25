@@ -1,0 +1,7 @@
+<h1>Podsjetnik</h1>
+<input type="text" [(ngModel)]="todo" />
+<button (click)="FunkcijaSnimi()">Snimi</button>
+
+<ul>
+    <li *ngFor="let element of podsjetnik">{{ element }}</li>
+</ul>

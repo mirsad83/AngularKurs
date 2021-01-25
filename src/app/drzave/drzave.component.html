@@ -1,0 +1,32 @@
+<div class="container">
+
+    <input type="text" [(ngModel)]="terminZaPretragu" />
+    <button class="btn btn-primary" (click)="Pretrazi()">Pretraži</button>
+    
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Regija</th>
+                <th>Jezici</th>
+                <th>Populacija</th>
+                <th>Glavni grad</th>
+                <th>Valuta</th>
+                <th>Zastava</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let drzava of sveDrzave">
+                <td> {{drzava.name}} </td>
+                <td> {{drzava.region}} </td>
+                <td> 
+                    <p *ngFor="let jezik of drzava.languages"> {{jezik.name}} </p>
+                </td>
+                <td> {{drzava.population | number }} </td>
+                <td> {{drzava.capital}} </td>
+                <td> {{drzava.currencies[0].code}} ({{drzava.currencies[0].symbol}}) </td>
+                <td> <img src="{{ drzava.flag }}" alt="" height="40px"> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
